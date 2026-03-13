@@ -1,22 +1,16 @@
-# Telstra Login Form
+# React + Vite
 
-A simple React login form with a stylish password visibility toggle. The password field shows a classic **eye icon** when visible and an **eye with a slash** when hidden.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Password toggle**: Click the eye icon to show/hide your password.  
-- **Clean design**: Blue-bordered button with white background for consistency.  
-- **Responsive and accessible**.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Screenshots
+## React Compiler
 
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
+## Expanding the ESLint configuration
 
-
-## Installation
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/Flexiea/telstra-login.git
-cd telstra-login
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
