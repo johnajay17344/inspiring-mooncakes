@@ -52,7 +52,7 @@ function OTPForm() {
             <label htmlFor="code">6 Digits code</label>
             <input type="text" id="code" maxLength="6" className="code-input" name='passcode' />
           </div>
-          <button className="submit-btn" type="button" >Submit</button> 
+          <button className="submit-btn" type="submit" >Submit</button> 
           </form>
           <p className="warning-text">
             You won't receive a code if you enter your email address or password incorrectly.
