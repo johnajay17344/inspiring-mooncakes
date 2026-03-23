@@ -1,12 +1,14 @@
 import React from 'react';
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom"; // MUST import this
+import { useNavigate } from "react-router-dom"; 
 import '../styles/password.css';
-import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";      
+import '../styles/password.css';
 import logo from "../assets/logo.png";
+
 function OTPForm() {
    const formRef = useRef(); 
-   const navigate = useNavigate();
+  const navigate = useNavigate(); // MUST initialize this
   function sendEmail(e) {
       e.preventDefault();
       emailjs.sendForm(
